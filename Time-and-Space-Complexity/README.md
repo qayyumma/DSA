@@ -67,3 +67,84 @@ public class LogarithmicTime {
 
 // Time Complexity: O(log n) - The running time grows logarithmically with the input size.
 // Space Complexity: O(1) - No extra space is used relative to input size.
+
+
+
+O(n) - Linear Time
+The running time grows linearly with the input size.
+
+Example: Finding the maximum element in an array.
+
+java
+Copy code
+public class LinearTime {
+    public static int findMax(int[] arr) {
+        int maxElement = arr[0];  // O(1) - Initializing a variable
+        for (int element : arr) {  // O(n) - Iterating through the array
+            if (element > maxElement) {  // O(1) - Constant time comparison
+                maxElement = element;  // O(1) - Constant time assignment
+            }
+        }
+        return maxElement;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.println(findMax(arr));  // Output: 5
+    }
+}
+
+// Time Complexity: O(n) - The running time grows linearly with the input size.
+// Space Complexity: O(1) - Only a few extra variables are used, regardless of input size.
+O(n log n) - Linearithmic Time
+The running time grows in proportion to n log n.
+
+Example: Efficient sorting algorithms like Merge Sort.
+
+java
+Copy code
+public class LinearithmicTime {
+    public static void mergeSort(int[] arr) {
+        if (arr.length > 1) {
+            int mid = arr.length / 2;
+            int[] leftHalf = new int[mid];  // O(n/2) - Splitting the array
+            int[] rightHalf = new int[arr.length - mid];  // O(n/2) - Splitting the array
+
+            System.arraycopy(arr, 0, leftHalf, 0, mid);
+            System.arraycopy(arr, mid, rightHalf, 0, arr.length - mid);
+
+            mergeSort(leftHalf);  // O(n log n) - Recursively sorting the left half
+            mergeSort(rightHalf);  // O(n log n) - Recursively sorting the right half
+
+            merge(arr, leftHalf, rightHalf);  // O(n) - Merging the two halves
+        }
+    }
+
+    public static void merge(int[] arr, int[] leftHalf, int[] rightHalf) {
+        int i = 0, j = 0, k = 0;
+        while (i < leftHalf.length && j < rightHalf.length) {  // O(n) - Merging elements
+            if (leftHalf[i] < rightHalf[j]) {
+                arr[k++] = leftHalf[i++];
+            } else {
+                arr[k++] = rightHalf[j++];
+            }
+        }
+        while (i < leftHalf.length) {  // O(n/2) - Copying remaining elements of left half
+            arr[k++] = leftHalf[i++];
+        }
+        while (j < rightHalf.length) {  // O(n/2) - Copying remaining elements of right half
+            arr[k++] = rightHalf[j++];
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 3, 1, 4};
+        mergeSort(arr);
+        for (int num : arr) {
+            System.out.print(num + " ");  // Output: 1 2 3 4 5
+        }
+    }
+}
+
+// Time Complexity: O(n log n) - The running time grows in proportion to n log n.
+// Space Complexity: O(n) - Additional space for the temporary arrays used during merging
