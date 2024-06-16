@@ -278,3 +278,8 @@ Example: Storing elements in an array.
 
 The space used by the algorithm grows quadratically with the input size.
 Example: Creating a 2D array for dynamic programming.
+
+
+![Time Complexity](images/output.png)
+
+![Time Complexity](images/graph.png)
