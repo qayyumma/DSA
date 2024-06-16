@@ -150,3 +150,130 @@ public class LinearithmicTime {
 // Time Complexity: O(n log n) - The running time grows in proportion to n log n.
 // Space Complexity: O(n) - Additional space for the temporary arrays used during merging
 ```
+
+
+
+### O(n^2) - Quadratic Time
+The running time grows quadratically with the input size.
+
+**Example: Bubble Sort.**
+
+```
+public class QuadraticTime {
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n; i++) {  // O(n) - Outer loop
+            for (int j = 0; j < n - i - 1; j++) {  // O(n) - Inner loop
+                if (arr[j] > arr[j + 1]) {  // O(1) - Constant time comparison
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;  // O(1) - Constant time swap
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 3, 1, 4};
+        bubbleSort(arr);
+        for (int num : arr) {
+            System.out.print(num + " ");  // Output: 1 2 3 4 5
+        }
+    }
+}
+
+// Time Complexity: O(n^2) - The running time grows quadratically with the input size.
+// Space Complexity: O(1) - Only a few extra variables are used, regardless of input size.
+```
+
+### O(2^n) - Exponential Time
+The running time grows exponentially with the input size.
+
+**Example: Solving the Tower of Hanoi problem.**
+
+```
+public class ExponentialTime {
+    public static void towerOfHanoi(int n, char source, char target, char auxiliary) {
+        if (n == 1) {
+            System.out.println("Move disk 1 from " + source + " to " + target);  // O(1) - Base case
+            return;
+        }
+        towerOfHanoi(n - 1, source, auxiliary, target);  // O(2^n-1) - Recursive call
+        System.out.println("Move disk " + n + " from " + source + " to " + target);  // O(1) - Move disk
+        towerOfHanoi(n - 1, auxiliary, target, source);  // O(2^n-1) - Recursive call
+    }
+
+    public static void main(String[] args) {
+        towerOfHanoi(3, 'A', 'C', 'B');
+    }
+}
+
+// Time Complexity: O(2^n) - The running time grows exponentially with the input size.
+// Space Complexity: O(n) - The call stack grows linearly with the number of disks.
+```
+
+### O(n!) - Factorial Time
+The running time grows factorially with the input size.
+
+**Example: Generating all permutations of a set.**
+
+```
+import java.util.ArrayList;
+import java.util.List;
+
+public class FactorialTime {
+    public static List<List<Integer>> generatePermutations(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        permute(nums, 0, result);
+        return result;
+    }
+
+    private static void permute(int[] nums, int start, List<List<Integer>> result) {
+        if (start == nums.length) {
+            List<Integer> permutation = new ArrayList<>();
+            for (int num : nums) {
+                permutation.add(num);
+            }
+            result.add(permutation);  // O(n!) - Generating all permutations
+        } else {
+            for (int i = start; i < nums.length; i++) {
+                swap(nums, start, i);
+                permute(nums, start + 1, result);  // O(n!) - Recursive call for permutations
+                swap(nums, start, i);  // Backtrack
+            }
+        }
+    }
+
+    private static void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3};
+        List<List<Integer>> permutations = generatePermutations(nums);
+        for (List<Integer> perm : permutations) {
+            System.out.println(perm);
+        }
+    }
+}
+
+// Time Complexity: O(n!) - The running time grows factorially with the input size.
+// Space Complexity: O
+```
+
+### Common Space Complexities
+**O(1) - Constant Space:**
+ 
+The algorithm uses a fixed amount of space regardless of the input size.
+Example: Simple operations that only require a few variables.
+
+**O(n) - Linear Space:**
+The space used by the algorithm grows linearly with the input size.
+Example: Storing elements in an array.
+
+**O(n^2) - Quadratic Space:**
+
+The space used by the algorithm grows quadratically with the input size.
+Example: Creating a 2D array for dynamic programming.
