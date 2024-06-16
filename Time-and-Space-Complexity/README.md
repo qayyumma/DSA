@@ -33,6 +33,7 @@ public class ConstantTime {
 // Time Complexity: O(1) - The running time is constant, regardless of the input size.
 // Space Complexity: O(1) - No extra space is used relative to input size.
 
+```java
 
 
 O(log n) - Logarithmic Time
