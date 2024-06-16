@@ -41,8 +41,7 @@ The running time grows logarithmically with the input size.
 
 Example: Binary search in a sorted array.
 
-java
-Copy code
+```
 public class LogarithmicTime {
     public static int binarySearch(int[] arr, int target) {
         int left = 0, right = arr.length - 1;
@@ -67,7 +66,7 @@ public class LogarithmicTime {
 
 // Time Complexity: O(log n) - The running time grows logarithmically with the input size.
 // Space Complexity: O(1) - No extra space is used relative to input size.
-
+```
 
 
 O(n) - Linear Time
@@ -75,8 +74,7 @@ The running time grows linearly with the input size.
 
 Example: Finding the maximum element in an array.
 
-java
-Copy code
+```
 public class LinearTime {
     public static int findMax(int[] arr) {
         int maxElement = arr[0];  // O(1) - Initializing a variable
@@ -96,13 +94,14 @@ public class LinearTime {
 
 // Time Complexity: O(n) - The running time grows linearly with the input size.
 // Space Complexity: O(1) - Only a few extra variables are used, regardless of input size.
+```
+
 O(n log n) - Linearithmic Time
 The running time grows in proportion to n log n.
 
 Example: Efficient sorting algorithms like Merge Sort.
 
-java
-Copy code
+```
 public class LinearithmicTime {
     public static void mergeSort(int[] arr) {
         if (arr.length > 1) {
@@ -148,3 +147,4 @@ public class LinearithmicTime {
 
 // Time Complexity: O(n log n) - The running time grows in proportion to n log n.
 // Space Complexity: O(n) - Additional space for the temporary arrays used during merging
+```
