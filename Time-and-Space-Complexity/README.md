@@ -18,7 +18,7 @@ The running time of the algorithm is constant, regardless of the input size.
 
 **Example: Accessing an element in an array by index.**
 
-```java
+```
 public class ConstantTime {
     public static int accessElement(int[] arr, int index) {
         return arr[index];  // O(1) - Accessing an element by index takes constant time
@@ -33,7 +33,7 @@ public class ConstantTime {
 // Time Complexity: O(1) - The running time is constant, regardless of the input size.
 // Space Complexity: O(1) - No extra space is used relative to input size.
 
-```java
+```
 
 
 O(log n) - Logarithmic Time
