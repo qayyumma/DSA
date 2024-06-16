@@ -36,10 +36,11 @@ public class ConstantTime {
 ```
 
 
-O(log n) - Logarithmic Time
+### O(log n) - Logarithmic Time
+
 The running time grows logarithmically with the input size.
 
-Example: Binary search in a sorted array.
+**Example: Binary search in a sorted array.**
 
 ```
 public class LogarithmicTime {
@@ -69,10 +70,10 @@ public class LogarithmicTime {
 ```
 
 
-O(n) - Linear Time
+### O(n) - Linear Time
 The running time grows linearly with the input size.
 
-Example: Finding the maximum element in an array.
+**Example: Finding the maximum element in an array.**
 
 ```
 public class LinearTime {
@@ -96,10 +97,11 @@ public class LinearTime {
 // Space Complexity: O(1) - Only a few extra variables are used, regardless of input size.
 ```
 
-O(n log n) - Linearithmic Time
+### O(n log n) - Linearithmic Time
+
 The running time grows in proportion to n log n.
 
-Example: Efficient sorting algorithms like Merge Sort.
+**Example: Efficient sorting algorithms like Merge Sort.**
 
 ```
 public class LinearithmicTime {
