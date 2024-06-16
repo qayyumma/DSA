@@ -270,6 +270,7 @@ The algorithm uses a fixed amount of space regardless of the input size.
 Example: Simple operations that only require a few variables.
 
 **O(n) - Linear Space:**
+
 The space used by the algorithm grows linearly with the input size.
 Example: Storing elements in an array.
 
