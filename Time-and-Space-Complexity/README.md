@@ -153,7 +153,8 @@ public class LinearithmicTime {
         }
     }
 }
-
+// Time Complexity: O(n^2) - The running time grows quadratically with the input size.
+// Space Complexity: O(1) - Only a few extra variables are used, regardless of input size.
 ```
 
 
