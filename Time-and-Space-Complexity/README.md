@@ -105,50 +105,55 @@ The running time grows in proportion to n log n.
 
 ```
 public class LinearithmicTime {
+
+    // Function to perform merge sort
     public static void mergeSort(int[] arr) {
         if (arr.length > 1) {
             int mid = arr.length / 2;
-            int[] leftHalf = new int[mid];  // O(n/2) - Splitting the array
-            int[] rightHalf = new int[arr.length - mid];  // O(n/2) - Splitting the array
+            int[] leftHalf = new int[mid];
+            int[] rightHalf = new int[arr.length - mid];
 
+            // Split the array into two halves
             System.arraycopy(arr, 0, leftHalf, 0, mid);
             System.arraycopy(arr, mid, rightHalf, 0, arr.length - mid);
 
-            mergeSort(leftHalf);  // O(n log n) - Recursively sorting the left half
-            mergeSort(rightHalf);  // O(n log n) - Recursively sorting the right half
+            // Recursively sort each half
+            mergeSort(leftHalf);
+            mergeSort(rightHalf);
 
-            merge(arr, leftHalf, rightHalf);  // O(n) - Merging the two halves
+            // Merge the sorted halves
+            merge(arr, leftHalf, rightHalf);
         }
     }
 
+    // Function to merge two sorted arrays
     public static void merge(int[] arr, int[] leftHalf, int[] rightHalf) {
         int i = 0, j = 0, k = 0;
-        while (i < leftHalf.length && j < rightHalf.length) {  // O(n) - Merging elements
+        while (i < leftHalf.length && j < rightHalf.length) {
             if (leftHalf[i] < rightHalf[j]) {
                 arr[k++] = leftHalf[i++];
             } else {
                 arr[k++] = rightHalf[j++];
             }
         }
-        while (i < leftHalf.length) {  // O(n/2) - Copying remaining elements of left half
+        while (i < leftHalf.length) {
             arr[k++] = leftHalf[i++];
         }
-        while (j < rightHalf.length) {  // O(n/2) - Copying remaining elements of right half
+        while (j < rightHalf.length) {
             arr[k++] = rightHalf[j++];
         }
     }
 
+    // Main method to test the merge sort
     public static void main(String[] args) {
         int[] arr = {5, 2, 3, 1, 4};
         mergeSort(arr);
         for (int num : arr) {
-            System.out.print(num + " ");  // Output: 1 2 3 4 5
+            System.out.print(num + " ");
         }
     }
 }
 
-// Time Complexity: O(n log n) - The running time grows in proportion to n log n.
-// Space Complexity: O(n) - Additional space for the temporary arrays used during merging
 ```
 
 
