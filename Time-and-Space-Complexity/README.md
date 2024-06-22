@@ -326,6 +326,7 @@ public class LinearSearch {
 }
 ```
 **Time Complexity: O(n)** - In the worst case, we might have to check all n elements.
+
 **Space Complexity: O(1)** - Only a few extra variables are used.
 
 ### 2. Omega Notation (Ω)
@@ -355,6 +356,7 @@ public class LinearSearchBestCase {
 }
 ```
 **Best Case Time Complexity: Ω(1)** - If the target element is the first element in the list, the search will be completed in constant time.
+
 **Space Complexity: O(1)** - Only a few extra variables are used.
 
 ### 3. Theta Notation (Θ)
@@ -389,6 +391,7 @@ public class InsertionSort {
 ```
 
 **Time Complexity: Θ(n^2)** - In both the average and worst-case scenarios, each element might need to be compared with every other element.
+
 **Space Complexity: O(1)** - Only a few extra variables are used.
 
 ### Summary of Asymptotic Notations
