@@ -290,3 +290,126 @@ Example: Creating a 2D array for dynamic programming.
 ![Time Complexity](images/output.png)
 
 ![Time Complexity](images/graph.png)
+
+
+
+## Asymptotic Notations: Big O, Omega, and Theta
+Asymptotic notations are mathematical tools used to describe the limiting behavior of a function when the argument tends towards a particular value or infinity. In the context of algorithms, they describe the efficiency and performance of algorithms in terms of time and space complexity.
+
+Here, we'll focus on three main notations: Big O (O), Omega (Ω), and Theta (Θ), and we'll provide basic examples in Java to illustrate each concept.
+
+### 1. Big O Notation (O)
+Definition: Big O notation describes the upper bound of the time complexity. It gives the worst-case scenario for the growth rate of an algorithm's running time as the input size increases.
+
+Example: Linear Search
+
+In a linear search, we look for an element in an unsorted list by checking each element one by one.
+
+```
+public class LinearSearch {
+    public static int linearSearch(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                return i;
+            }
+        }
+        return -1; // target not found
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 3, 1, 4};
+        int target = 3;
+        int result = linearSearch(arr, target);
+        System.out.println("Element found at index: " + result);
+    }
+}
+```
+**Time Complexity: O(n)** - In the worst case, we might have to check all n elements.
+**Space Complexity: O(1)** - Only a few extra variables are used.
+
+### 2. Omega Notation (Ω)
+Definition: Omega notation describes the lower bound of the time complexity. It gives the best-case scenario for the growth rate of an algorithm's running time.
+
+Example: Linear Search (Best Case)
+
+Using the same linear search example:
+
+```
+public class LinearSearchBestCase {
+    public static int linearSearch(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                return i;
+            }
+        }
+        return -1; // target not found
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 3, 1, 4};
+        int target = 5; // Best case, the target is the first element
+        int result = linearSearch(arr, target);
+        System.out.println("Element found at index: " + result);
+    }
+}
+```
+**Best Case Time Complexity: Ω(1)** - If the target element is the first element in the list, the search will be completed in constant time.
+**Space Complexity: O(1)** - Only a few extra variables are used.
+
+### 3. Theta Notation (Θ)
+Definition: Theta notation describes the tight bound of the time complexity. It gives an exact asymptotic behavior by providing both the upper and lower bounds.
+
+Example: Insertion Sort
+
+Insertion sort sorts an array by iteratively taking an element and inserting it into its correct position.
+
+```
+public class InsertionSort {
+    public static void insertionSort(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            int key = arr[i];
+            int j = i - 1;
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = key;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 3, 1, 4};
+        insertionSort(arr);
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+```
+
+**Time Complexity: Θ(n^2)** - In both the average and worst-case scenarios, each element might need to be compared with every other element.
+**Space Complexity: O(1)** - Only a few extra variables are used.
+
+### Summary of Asymptotic Notations
+
+Big O (O) - Describes the worst-case scenario.
+Example: Finding an element in an unsorted array (Linear Search).
+Code: O(n)
+
+Omega (Ω) - Describes the best-case scenario.
+Example: Finding the first element in an array (Linear Search Best Case).
+Code: Ω(1)
+
+Theta (Θ) - Describes the exact bound (both upper and lower bounds).
+Example: Sorting an array using Insertion Sort.
+Code: Θ(n^2)
+
+**Visual Representation**
+Imagine these notations on a graph where the x-axis represents the input size (n) and the y-axis represents the time or space complexity:
+
+O(n): The line representing the growth rate will not be exceeded.
+Ω(1): The line representing the best-case growth rate.
+Θ(n^2): The line represents the exact growth rate, providing both upper and lower bounds.
+
+**Conclusion**
+Asymptotic notations are crucial in understanding and comparing the efficiency of algorithms. They provide a high-level understanding of how an algorithm performs as the input size increases, helping developers make informed decisions about which algorithm to use based on the problem's constraints and requirements.
