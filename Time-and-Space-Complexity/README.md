@@ -326,8 +326,6 @@ public class LinearSearch {
 }
 ```
 **Time Complexity: O(n)** - In the worst case, we might have to check all n elements.
-
-
 **Space Complexity: O(1)** - Only a few extra variables are used.
 
 ### 2. Omega Notation (Ω)
@@ -357,8 +355,6 @@ public class LinearSearchBestCase {
 }
 ```
 **Best Case Time Complexity: Ω(1)** - If the target element is the first element in the list, the search will be completed in constant time.
-
-
 **Space Complexity: O(1)** - Only a few extra variables are used.
 
 ### 3. Theta Notation (Θ)
@@ -393,29 +389,28 @@ public class InsertionSort {
 ```
 
 **Time Complexity: Θ(n^2)** - In both the average and worst-case scenarios, each element might need to be compared with every other element.
-
 **Space Complexity: O(1)** - Only a few extra variables are used.
 
 ### Summary of Asymptotic Notations
 
-Big O (O) - Describes the worst-case scenario.
+**Big O (O)** - Describes the worst-case scenario.
 Example: Finding an element in an unsorted array (Linear Search).
 Code: O(n)
 
-Omega (Ω) - Describes the best-case scenario.
+**Omega (Ω)** - Describes the best-case scenario.
 Example: Finding the first element in an array (Linear Search Best Case).
 Code: Ω(1)
 
-Theta (Θ) - Describes the exact bound (both upper and lower bounds).
+**Theta (Θ)** - Describes the exact bound (both upper and lower bounds).
 Example: Sorting an array using Insertion Sort.
 Code: Θ(n^2)
 
 **Visual Representation**
 Imagine these notations on a graph where the x-axis represents the input size (n) and the y-axis represents the time or space complexity:
 
-O(n): The line representing the growth rate will not be exceeded.
-Ω(1): The line representing the best-case growth rate.
-Θ(n^2): The line represents the exact growth rate, providing both upper and lower bounds.
+**O(n):** The line representing the growth rate will not be exceeded.
+**Ω(1):** The line representing the best-case growth rate.
+**Θ(n^2):** The line represents the exact growth rate, providing both upper and lower bounds.
 
 **Conclusion**
 Asymptotic notations are crucial in understanding and comparing the efficiency of algorithms. They provide a high-level understanding of how an algorithm performs as the input size increases, helping developers make informed decisions about which algorithm to use based on the problem's constraints and requirements.
