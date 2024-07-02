@@ -166,3 +166,150 @@ private void swap(int[] nums, int i, int j) {
 }
 ```
 
+### Declaration and Initialization 2D Array
+In Java, arrays can be declared and initialized in several ways:
+
+**Declaration:**
+```
+int[][] arr;
+arr = new int[3][4]; // Creates a 3x4 array (3 rows and 4 columns)
+```
+
+**itialization:**
+```
+int[][] arr = new int[3][4]; // Directly declares and initializes a 3x4 array creates an array of size 5
+int[][] arr = { {1, 2, 3, 4},{5, 6, 7, 8},{9, 10, 11, 12} }; // A 3x4 array initialized with specific values
+```
+
+
+### Important DSA Algorithms in 2D Arrays
+
+**Matrix Multiplication**
+
+Description: Multiplies two matrices.
+Time Complexity: O(n^3)
+Space Complexity: O(n^2)
+```
+public int[][] multiply(int[][] A, int[][] B) {
+    int n = A.length;
+    int[][] C = new int[n][n];
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            C[i][j] = 0;
+            for (int k = 0; k < n; k++) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+    return C;
+}
+```
+
+**Transpose of a Matrix**
+
+Description: Transposes a given matrix.
+Time Complexity: O(n^2)
+Space Complexity: O(1) if done in place
+```
+public void transpose(int[][] matrix) {
+    int n = matrix.length;
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            int temp = matrix[i][j];
+            matrix[i][j] = matrix[j][i];
+            matrix[j][i] = temp;
+        }
+    }
+}
+```
+
+**Search in a Sorted 2D Matrix**
+
+Description: Searches for a target value in a sorted 2D matrix.
+Time Complexity: O(n + m)
+Space Complexity: O(1)
+```
+public boolean searchMatrix(int[][] matrix, int target) {
+    if (matrix == null || matrix.length == 0) return false;
+    int row = 0, col = matrix[0].length - 1;
+    while (row < matrix.length && col >= 0) {
+        if (matrix[row][col] == target) {
+            return true;
+        } else if (matrix[row][col] > target) {
+            col--;
+        } else {
+            row++;
+        }
+    }
+    return false;
+}
+```
+
+**Rotate Matrix by 90 Degrees**
+
+Description: Rotates a matrix by 90 degrees clockwise.
+Time Complexity: O(n^2)
+Space Complexity: O(1)
+```
+public void rotate(int[][] matrix) {
+    int n = matrix.length;
+    for (int i = 0; i < n / 2; i++) {
+        for (int j = i; j < n - i - 1; j++) {
+            int temp = matrix[i][j];
+            matrix[i][j] = matrix[n - 1 - j][i];
+            matrix[n - 1 - j][i] = matrix[n - 1 - i][n - 1 - j];
+            matrix[n - 1 - i][n - 1 - j] = matrix[j][n - 1 - i];
+            matrix[j][n - 1 - i] = temp;
+        }
+    }
+}
+```
+
+**Finding the Longest Increasing Path in a Matrix**
+
+Description: Finds the longest increasing path in a matrix.
+Time Complexity: O(n^2)
+Space Complexity: O(n^2)
+
+
+```
+public class Solution {
+    public int longestIncreasingPath(int[][] matrix) {
+        if (matrix == null || matrix.length == 0) return 0;
+        int m = matrix.length, n = matrix[0].length;
+        int[][] memo = new int[m][n];
+        int maxLen = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                maxLen = Math.max(maxLen, dfs(matrix, i, j, memo));
+            }
+        }
+        return maxLen;
+    }
+
+    private int dfs(int[][] matrix, int i, int j, int[][] memo) {
+        if (memo[i][j] != 0) return memo[i][j];
+        int[] dirs = {-1, 0, 1, 0, -1};
+        int maxLen = 1;
+        for (int d = 0; d < 4; d++) {
+            int x = i + dirs[d], y = j + dirs[d + 1];
+            if (x >= 0 && x < matrix.length && y >= 0 && y < matrix[0].length && matrix[x][y] > matrix[i][j]) {
+                maxLen = Math.max(maxLen, 1 + dfs(matrix, x, y, memo));
+            }
+        }
+        memo[i][j] = maxLen;
+        return maxLen;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        int[][] matrix = {
+            {9, 9, 4},
+            {6, 6, 8},
+            {2, 1, 1}
+        };
+        System.out.println("Longest Increasing Path: " + sol.longestIncreasingPath(matrix)); // Output: 4
+    }
+}
+
+```
