@@ -3,7 +3,9 @@
 A doubly linked list is a linear data structure where each element, called a node, contains three parts:
 
 Data: The value stored in the node.
+
 Next: A reference to the next node in the sequence.
+
 Prev: A reference to the previous node in the sequence.
 
 ### Comparison with Singly Linked List and Other Data Types
