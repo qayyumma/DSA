@@ -2,7 +2,7 @@
 
 A singly linked list is a linear data structure where each element, called a node, contains a data part and a reference (or pointer) to the next node in the sequence. The list starts with a head node and ends with a node whose next pointer is null, indicating the end of the list.
 
-### Problems Solved by Singly Linked List**
+### Problems Solved by Singly Linked List
 
 **Dynamic Size:**
 Singly linked lists can grow and shrink dynamically, allowing for efficient use of memory without the need for pre-allocating a fixed size.
