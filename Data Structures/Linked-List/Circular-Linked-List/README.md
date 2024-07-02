@@ -7,6 +7,7 @@ A circular linked list is a variation of a linked list where the last node point
 **Advantages of Circular Linked List over Singly Linked List**
 
 **Continuous Traversal:**
+
 Problem in Singly Linked List: Traversal stops at the end of the list.
 
 Solution in Circular Linked List: The last node points to the first node, allowing continuous traversal without needing to stop at the end of the list.
