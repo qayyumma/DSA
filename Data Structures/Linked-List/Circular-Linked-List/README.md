@@ -1,4 +1,5 @@
 ## Definition of Circular Linked List
+
 A circular linked list is a variation of a linked list where the last node points back to the first node, forming a circle. This can be applied to both singly and doubly linked lists.
 
 ### Comparison with Singly and Doubly Linked Lists
@@ -17,7 +18,9 @@ Problem in Singly Linked List: Implementing circular operations (e.g., round-rob
 Solution in Circular Linked List: Naturally supports circular operations due to its structure.
 
 **Advantages of Circular Linked List over Doubly Linked List**
+
 **Memory Efficiency:**
+
 Problem in Doubly Linked List: Each node has two pointers (next and prev), which increases memory usage.
 
 Solution in Circular Singly Linked List: Each node has only one pointer (next), reducing memory overhead compared to a doubly linked list.
