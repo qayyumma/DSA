@@ -177,14 +177,23 @@ Constructor initializes the data and sets the next reference to null.
 **SinglyLinkedList Class:**
 
 Contains a reference to the head node.
+
 addFirst(int data): Adds a new node at the beginning of the list.
+
 addLast(int data): Adds a new node at the end of the list.
+
 deleteFirst(): Deletes the first node of the list.
+
 deleteLast(): Deletes the last node of the list.
+
 deleteValue(int data): Deletes the first node with the specified value.
+
 search(int data): Searches for a node with the specified value and returns true if found, false otherwise.
+
 printList(): Prints all the elements in the list.
-Example Usage
+
+**Example Usage**
 In the main method, we create an instance of SinglyLinkedList, add elements, delete elements, search for elements, and print the list to demonstrate the functionality.
+
 
 This complete version of the singly linked list class includes basic add, delete, and search operations, making it a comprehensive and functional linked list implementation in Java.
