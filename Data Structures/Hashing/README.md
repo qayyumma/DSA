@@ -10,6 +10,7 @@ In Data Structures and Algorithms (DSA), collisions primarily occur in hash tabl
 ### Collision Handling Techniques
 
 **1. Chaining**
+
 **2. Open Addressing**
 
 ### 1. Chaining
