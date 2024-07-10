@@ -94,3 +94,265 @@ Example: If the highest degree among all nodes is 4, then the degree of the tree
 
 **Database Indexing:** B-trees and other tree structures are used in database indexing to efficiently search for and retrieve data. 
 
+### INSERTION, DELETION, SEARCHING of Binary tree.
+
+**Creation of Node in Binary Tree**
+
+Class Node
+```
+class Node
+{   
+    int key;
+    Node left;
+    Node right;
+    
+    Node(int val)
+    {   
+        key = val;
+        left = null;
+        right = null;
+    }
+}
+
+```
+
+**Purpose:** Represents a single node in the binary search tree (BST).
+
+**Fields:**
+
+**int key:** The value stored in the node.
+
+**Node left:** Reference to the left child node.
+
+**Node right:** Reference to the right child node.
+
+**Constructor:** Initializes a node with a value val and sets both child nodes (left and right) to null
+
+
+**Method insert**
+
+```
+    public Node insert(Node root, int val)
+    {
+        if(root == null)
+            return new Node(val);
+        else if(root.key < val)
+            root.right = insert(root.right,val);
+        else if(root.key > val)
+            root.left = insert(root.left,val);
+        return root;
+    }
+
+```
+
+**Purpose:** Inserts a new value into the BST.
+
+**Parameters:**
+
+**Node root:** The current root of the subtree where we want to insert the new value.
+
+**int val:** The value to be inserted.
+
+**Logic:**
+
+If root is null, create a new node with val and return it.
+
+If val is greater than root.key, insert it in the right subtree.
+
+If val is less than root.key, insert it in the left subtree.
+
+Return the root of the modified subtree.
+
+**Method search**
+
+```
+public boolean search(Node root, int key)
+{
+    if (root == null)
+        return false;
+    if (root.key == key)
+        return true;
+    else if (root.key > key)
+        return search(root.left, key);
+    else
+        return search(root.right, key);
+}
+```
+
+**Purpose:** Searches for a node with the given key in the BST.
+
+**Parameters:**
+
+**Node root:** The current root of the subtree where we want to search for the key.
+
+**int key:** The key to be searched.
+
+**Logic:**
+
+If root is null, return false (key not found).
+
+If root.key is equal to the key, return true (key found).
+
+If the key is less than root.key, search in the left subtree.
+
+If the key is greater than root.key, search in the right subtree.
+
+**Method getRightMin**
+
+```
+    public int getRightMin(Node root)
+    {
+        Node temp = root;
+
+        while(temp.left != null)
+        {
+            temp = temp.left;
+        }
+
+        return temp.key;
+    }
+
+```
+
+**Purpose:** Finds the minimum value in the right subtree.
+
+**Parameters:**
+
+**Node root:** The root of the right subtree.
+
+**Logic:**
+
+Traverse to the leftmost node of the subtree (minimum value).
+
+Return the key of the leftmost node.
+
+
+
+**Method Delete**
+
+```
+    public Node removeNode(Node root, int val)
+    {
+        if(root == null)
+            return null;
+        if(root.key < val)
+            root.right = removeNode(root.right,val);
+        else if(root.key > val)
+            root.left = removeNode(root.left,val);
+        else
+        {
+            if(root.left == null && root.right == null)
+                return null;
+            else if(root.left == null)
+                return root.right;
+            else if(root.right == null)
+                return root.left;
+            else
+            {
+                int rightMin = getRightMin(root.right);
+                root.key = rightMin;
+                root.right = removeNode(root.right,rightMin);
+            }
+        }
+        return root;
+    }
+```
+Deletion in a Binary Search Tree (BST) involves removing a node while ensuring the tree remains a valid BST. There are three main cases to handle during deletion:
+
+Deleting a Leaf Node (node with no children)
+
+Deleting a Node with One Child
+
+Deleting a Node with Two Children
+
+**Case 1:** Deleting a Leaf Node
+
+A leaf node is a node with no children. This is the simplest case.
+
+Steps:
+
+Simply remove the node from the tree.
+
+Example:
+
+Node to be deleted: 20
+```
+Tree before deletion:
+
+markdown
+
+   10
+     \
+      20
+
+Tree after deletion:
+
+Copy code
+   10
+```
+
+**Case 2:** Deleting a Node with One Child
+
+A node with one child has either a left child or a right child.
+
+Steps:
+
+Remove the node and connect its parent directly to its child.
+Example:
+
+Node to be deleted: 30
+
+```
+Tree before deletion:
+
+    10
+      \
+       30
+         \
+          40
+Tree after deletion:
+markdown
+Copy code
+    10
+      \
+       40
+```
+
+**Case 3:** Deleting a Node with Two Children
+
+This is the most complex case. The node to be deleted has both left and right children.
+
+Steps:
+
+Find the node's in-order successor (the smallest node in its right subtree) or in-order predecessor (the largest node in its left subtree).
+
+Replace the node’s key with the in-order successor’s (or predecessor's) key.
+
+Delete the in-order successor (or predecessor), which will now have at most one child.
+Example:
+
+Node to be deleted: 20
+
+Tree before deletion:
+```
+    15
+   /  \
+  10   20
+       / \
+      17  25
+Choose in-order successor: 25
+
+Replace 20 with 25
+
+Delete 25
+
+Tree after deletion:
+
+markdown
+Copy code
+    15
+   /  \
+  10   25
+       /
+      17
+```
