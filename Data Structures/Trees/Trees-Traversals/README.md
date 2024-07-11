@@ -121,3 +121,54 @@ Preorder traversal of binary tree is
 **Time Complexity:** O(N)
 
 **Auxiliary Space:** If we don’t consider the size of the stack for function calls then O(1) otherwise O(h) where h is the height of the tree.
+
+
+**Postorder Traversal :**
+
+![Time Complexity](images/Postorder-Traversal-of-Binary-Tree.webp)
+
+Postorder traversal visits the node in the order: Left -> Right -> Root
+
+**Algorithm for Postorder Traversal:**
+
+Algorithm Postorder(tree)
+
+Traverse the left subtree, i.e., call Postorder(left->subtree)
+
+Traverse the right subtree, i.e., call Postorder(right->subtree)
+
+Visit the root
+
+**Uses of Postorder Traversal:**
+
+Postorder traversal is used to delete the tree. See the question for the deletion of a tree for details.
+
+Postorder traversal is also useful to get the postfix expression of an expression tree.
+
+Postorder traversal can help in garbage collection algorithms, particularly in systems where manual memory management is used.
+
+```
+// Given a binary tree, print its nodes according to the
+// "bottom-up" postorder traversal.
+void printPostorder(Node node)
+{
+    if (node == null)
+        return;
+
+    // First recur on left subtree
+    printPostorder(node.left);
+
+    // Then recur on right subtree
+    printPostorder(node.right);
+
+    // Now deal with the node
+    System.out.print(node.key + " ");
+}
+
+```
+
+**Output**
+
+Postorder traversal of binary tree is 
+
+4 5 2 3 1 
