@@ -172,3 +172,60 @@ void printPostorder(Node node)
 Postorder traversal of binary tree is 
 
 4 5 2 3 1 
+
+
+**Level Order Traversal :**
+
+![Time Complexity](images/Level-Order-Traversal-of-Binary-Tree.webp)
+
+Level Order Traversal visits all nodes present in the same level completely before visiting the next level.
+
+**Algorithm for Level Order Traversal:**
+
+LevelOrder(tree)
+
+Create an empty queue Q
+
+Enqueue the root node of the tree to Q
+
+Loop while Q is not empty
+
+Dequeue a node from Q and visit it
+
+Enqueue the left child of the dequeued node if it exists
+
+Enqueue the right child of the dequeued node if it exists
+
+**Uses of Level Order:**
+
+Level Order Traversal is mainly used as Breadth First Search to search or process nodes level-by-level.
+
+Level Order traversal is also used for Tree Serialization and Deserialization.
+
+```
+// Given a binary tree. Print
+// its nodes in level order
+// using array for implementing queue
+void printLevelOrder()
+{
+    Queue<Node> queue = new LinkedList<Node>();
+    queue.add(root);
+    while (!queue.isEmpty()) {
+
+        // poll() removes the present head.
+        Node tempNode = queue.poll();
+        System.out.print(tempNode.data + " ");
+
+        // Enqueue left child
+        if (tempNode.left != null) {
+            queue.add(tempNode.left);
+        }
+
+        // Enqueue right child
+        if (tempNode.right != null) {
+            queue.add(tempNode.right);
+        }
+    }
+}
+
+```
