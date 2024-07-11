@@ -67,3 +67,57 @@ Inorder traversal of binary tree is
 **Time Complexity:** O(N)
 
 **Auxiliary Space:** If we don’t consider the size of the stack for function calls then O(1) otherwise O(h) where h is the height of the tree.
+
+
+
+**Preorder Traversal :**
+
+![Time Complexity](images/Inorder-Traversal-of-Binary-Tree.webp)
+
+Preorder traversal visits the node in the order: Root -> Left -> Right
+
+Algorithm for Preorder Traversal:
+
+Preorder(tree)
+
+Visit the root.
+
+Traverse the left subtree, i.e., call Preorder(left->subtree)
+
+Traverse the right subtree, i.e., call Preorder(right->subtree)
+
+**Uses of Preorder Traversal:**
+
+Preorder traversal is used to create a copy of the tree.
+
+Preorder traversal is also used to get prefix expressions on an expression tree.
+
+```
+// Given a binary tree, print its nodes in preorder
+void printPreorder(Node node)
+{
+    if (node == null)
+        return;
+
+    // First print data of node
+    System.out.print(node.key + " ");
+
+    // Then recur on left subtree
+    printPreorder(node.left);
+
+    // Now recur on right subtree
+    printPreorder(node.right);
+}
+
+```
+
+
+**Output**
+
+Preorder traversal of binary tree is 
+
+1 2 4 5 3 
+
+**Time Complexity:** O(N)
+
+**Auxiliary Space:** If we don’t consider the size of the stack for function calls then O(1) otherwise O(h) where h is the height of the tree.
