@@ -372,7 +372,7 @@ Level Order Traversal or Breadth First Search or BFS
 
 ### Types of Binary Trees
 
-  ── Binary Tree
+  ─ Binary Tree
 
         ├── Full Binary Tree
 
