@@ -372,58 +372,37 @@ Level Order Traversal or Breadth First Search or BFS
 
 ### Types of Binary Trees
 
-  ─ Binary Tree
-
+  ```
+General Tree
+  ├── N-ary Tree (Generic Tree)
+  │     └── Ternary Tree
+  └── Binary Tree
         ├── Full Binary Tree
-
         ├── Complete Binary Tree
-
         ├── Perfect Binary Tree
-
         ├── Degenerate Tree
-
         └── Balanced Binary Tree
-
              └── Binary Search Tree (BST)
-
                    ├── AVL Tree
-
                    ├── Red-Black Tree
-
                    ├── Splay Tree
-
                    ├── Treap
-
                    └── Tango Tree
-
         └── Heaps
-
              ├── Binary Heap
-
              │     ├── Min-Heap
-
              │     └── Max-Heap
-
              ├── Binomial Heap
-
              └── Fibonacci Heap
-
         └── B-Trees
-
              ├── B-Tree
-
              └── B+ Tree
-
         └── Trie (Prefix Tree)
-
              ├── Standard Trie
-
              ├── Compressed Trie
-
              └── Suffix Trie
-
         └── Segment Tree
-
         └── Fenwick Tree (Binary Indexed Tree)
-
         └── K-D Tree (k-dimensional tree)
+
+  ```
