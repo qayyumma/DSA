@@ -31,6 +31,8 @@ Unknown number of children – The number of children for each node is not known
 
 A ternary tree is a type of tree data structure where each node has at most three children. These children are typically referred to as the left child, the middle child, and the right child.
 
+![Time Complexity](images/ternary1-300x201.png)
+
 **Properties**
 
 **Each node has up to three children:** Unlike binary trees, which have at most two children per node, ternary trees can have up to three children.
