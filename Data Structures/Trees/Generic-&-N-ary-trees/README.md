@@ -11,4 +11,4 @@ A generic tree, also known as a multi-way tree or N-ary tree, is a type of tree 
 **Leaf Nodes:** Nodes that do not have any children.
 
 
-![Time Complexity](images/Introduction-to-tree-.webp)
+![Time Complexity](images/generic-tree_gfg.png)
