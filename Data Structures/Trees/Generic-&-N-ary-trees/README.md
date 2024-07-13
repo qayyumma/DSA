@@ -12,3 +12,8 @@ A generic tree, also known as a multi-way tree or N-ary tree, is a type of tree 
 
 
 ![Time Complexity](images/generic-tree_gfg.png)
+
+**Disadvantages of the above representation are:**
+
+Memory Wastage – All the pointers are not required in all the cases. Hence, there is lot of memory wastage.
+Unknown number of children – The number of children for each node is not known in advance.
