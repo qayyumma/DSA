@@ -98,7 +98,7 @@ Example:
           4
 ```
 
-### Balanced Binary Tree**
+### Balanced Binary Tree
 
 **Definition:** A binary tree is balanced if the height difference between the left and right subtrees of any node is at most one.
 
