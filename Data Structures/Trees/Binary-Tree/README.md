@@ -2,6 +2,22 @@
 
 A binary tree is a tree data structure in which each node has at most two children, referred to as the left child and the right child. Binary trees are a fundamental structure in computer science and form the basis for more complex tree structures.
 
+```
+General Tree
+ └── Binary Tree
+      ├── Full Binary Tree
+      ├── Complete Binary Tree
+      ├── Perfect Binary Tree
+      ├── Degenerate Tree
+      └── Balanced Binary Tree
+           └── Binary Search Tree (BST)
+                 ├── AVL Tree
+                 ├── Red-Black Tree
+                 ├── Splay Tree
+                 ├── Treap
+                 └── Tango Tree
+```
+
 #### Full Binary Tree
 
 Definition: A binary tree is full if every node has either 0 or 2 children. No node in a full binary tree has only one child.
