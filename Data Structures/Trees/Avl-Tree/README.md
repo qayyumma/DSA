@@ -6,7 +6,7 @@ Binary Search Trees (BSTs) have several potential drawbacks that can lead to ine
 
 **Balancing Issues:** BSTs do not automatically balance themselves. Without specific balancing mechanisms, the tree's performance can degrade significantly in worst-case scenarios.
 
-To address these drawbacks, AVL (Adelson-Velsky and Landis) trees were introduced. AVL trees are a type of self-balancing binary search tree. The key features and advantages of AVL trees include:
+**To address these drawbacks, AVL (Adelson-Velsky and Landis) trees were introduced. AVL trees are a type of self-balancing binary search tree. The key features and advantages of AVL trees include:**
 
 **Self-Balancing:** AVL trees automatically maintain their balance by ensuring that the heights of the two child subtrees of any node differ by at most one. This balance condition is checked and maintained after every insertion and deletion operation.
 
