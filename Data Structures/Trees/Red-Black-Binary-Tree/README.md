@@ -30,7 +30,7 @@ If adding a red node creates two consecutive red nodes, adjust the tree (recolor
 
 Ensure that every path from the root to a leaf has the same number of black nodes.
 
-![Red-Black-Binary-Tree](images/"red-black-tree.png")
+![Red-Black-Binary-Tree](images/red-black-tree.png)
 
 **Why Use Red-Black Trees?**
 
