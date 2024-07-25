@@ -30,7 +30,7 @@ If adding a red node creates two consecutive red nodes, adjust the tree (recolor
 
 Ensure that every path from the root to a leaf has the same number of black nodes.
 
-
+![Red-Black-Binary-Tree](images/"red-black-tree.png")
 
 **Why Use Red-Black Trees?**
 
@@ -63,7 +63,6 @@ It has a more complicated implementation than standard binary search trees.
 Insertion and deletion operations may require complex restructuring of the tree.
 
 It is not as efficient as hash tables for small data sets.
-
 
 
 
