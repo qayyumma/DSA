@@ -64,6 +64,15 @@ Insertion and deletion operations may require complex restructuring of the tree.
 
 It is not as efficient as hash tables for small data sets.
 
+## Comparison of Red-Black Trees and AVL Trees
 
-
-
+| Basis of Comparison     | Red-Black Trees                                                                                  | AVL Trees                                                                                     |
+|-------------------------|--------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| Lookups                 | Red-Black Trees have fewer lookups because they are not strictly balanced.                       | AVL trees provide faster lookups than Red-Black Trees because they are more strictly balanced.|
+| Colour                  | The color of the node is either Red or Black.                                                    | There is no color of the node.                                                                |
+| Insertion and Removal   | Red-Black Trees provide faster insertion and removal operations than AVL trees as fewer rotations are done due to relatively relaxed balancing. | AVL trees provide complex insertion and removal operations as more rotations are done due to relatively strict balancing. |
+| Storage                 | Red-Black Trees require only 1 bit of information per node.                                      | AVL trees store balance factors or heights with each node thus requiring storage for an integer per node. |
+| Searching               | It does not provide efficient searching.                                                         | It provides efficient searching.                                                              |
+| Uses                    | Red-Black Trees are used in most of the language libraries like map, multimap, multiset in C++, etc. | AVL trees are used in databases where faster retrievals are required.                         |
+| Balance Factor          | It does not have a balance factor.                                                               | Each node has a balance factor whose value will be 1, 0, or -1.                               |
+| Balancing               | Takes less processing for balancing; a maximum of two rotations are required.                    | Takes more processing for balancing.                                                          |
