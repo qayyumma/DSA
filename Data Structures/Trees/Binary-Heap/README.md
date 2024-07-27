@@ -193,6 +193,21 @@ print: Prints the heap in a readable format.
 
 extractMax: Removes and returns the maximum element from the heap, then ensures the heap property is maintained by bubbling down.
 
+## Comparison between Heap and Tree
+
+| S.No | Heap                                                                                  | Tree                                                                                |
+|------|---------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
+| 1    | Heap is a kind of Tree itself.                                                        | The tree is not a kind of heap.                                                     |
+| 2    | Usually, Heap is of two types, Max-Heap and Min-Heap.                                 | Whereas a Tree can be of various types for eg. binary Tree, BST (Binary Search tree), AVL tree, etc. |
+| 3    | Heap is ordered.                                                                      | Binary Tree is not ordered but BST is ordered.                                      |
+| 4    | Insert and remove will take O(log(N)) time in the worst case.                         | Insert and remove will take O(N) in the worst case in case the tree is skewed.      |
+| 5    | Finding Min/Max value in Heap is O(1) in the respective Min/Max heap.                 | Finding Min/Max value in BST is O(log(N)) and Binary Tree is O(N).                  |
+| 6    | Heap can also be referred to as Priority Queue.                                       | A tree can also be referred to as a connected undirected graph with no cycle.       |
+| 7    | Heap can be built in linear time complexity.                                          | BST: O(N * log(N)) and Binary Tree: O(N).                                           |
+| 8    | Applications: Prim’s Algorithm and Dijkstra’s algorithm.                              | Applications: Spanning Trees, Trie, B+ Tree, BST, Heap.                             |
+
+
+
 **Summary**
 
 A Max-Heap is a complete binary tree where the value of each node is greater than or equal to the values of its children.
