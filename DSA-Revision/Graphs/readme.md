@@ -2,7 +2,7 @@
 
 ![Local Image](./images/Graphs-in-DSA.png)
 
-- Adjacency Matrix of graph  
+# Adjacency Matrix of graph  
 
 - undirected 
 
