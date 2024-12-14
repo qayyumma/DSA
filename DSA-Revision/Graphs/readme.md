@@ -4,21 +4,27 @@
 
 # Adjacency Matrix of graph  
 
-- undirected 
+- Undirected 
 
 ![Local Image](./images/image-1.jpeg).
 
 ![Local Image](./images/image-2.jpeg).
 
-- directed 
+- Directed 
 
 ![Local Image](./images/image-3-1.jpeg).
 
 
 # Adjacency List of graph
 
-- undirected 
+- Undirected 
 
 ![Local Image](./images/image-2-1.jpeg).
 
 ![Local Image](./images/image-2-2.jpeg).
+
+- Directed
+
+![Local Image](./images/image-3-2.jpeg).
+
+
