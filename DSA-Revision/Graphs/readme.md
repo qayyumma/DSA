@@ -44,3 +44,15 @@
 
 ![Local Image](./images/image-5-1.jpg).
 
+
+# Depth-First Search (DFS) 
+
+- Iterative
+
+![Local Image](./images/image-5-2.jpg).
+
+- Recursive
+
+![Local Image](./images/image-5-3.png).
+
+
