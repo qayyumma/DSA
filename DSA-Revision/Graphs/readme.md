@@ -6,6 +6,6 @@
 
 - undirected 
 
-![Local Image](./images/WhatsApp Image 2024-12-14 at 3.20.52 PM.jpeg).
+![Local Image](./images/image-1.jpeg).
 
-![Local Image](./images/WhatsApp Image 2024-12-14 at 3.20.52 PM (1).jpeg).
+![Local Image](./images/image-2.jpeg).
