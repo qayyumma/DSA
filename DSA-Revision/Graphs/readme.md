@@ -10,6 +10,11 @@
 
 ![Local Image](./images/image-2.jpeg).
 
+- directed 
+
+![Local Image](./images/image-3-1.jpeg).
+
+
 # Adjacency List of graph
 
 - undirected 
