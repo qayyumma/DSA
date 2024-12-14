@@ -18,7 +18,7 @@
 
 ![Local Image](./images/image-4-2.png).
 
-- same for directed graph but just need to store form a--> b not b--> a
+- same for directed graph but just need to store form u--> v not v--> u
 
 
 # Adjacency List of graph
@@ -37,4 +37,4 @@
 
 ![Local Image](./images/image-4-1.png).
 
-- same for directed graph but just need to store form a--> b not b--> a
+- same for directed graph but just need to store form u--> v not v--> u
