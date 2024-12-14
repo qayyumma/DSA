@@ -42,5 +42,5 @@
 
 # Breadth-First Search (BFS)/ Level Order Traversal
 
-![Local Image](./images/image-5-1.jpeg).
+![Local Image](./images/image-5-1.jpg).
 
