@@ -12,7 +12,7 @@
 
 - Directed 
 
-![Local Image](./images/image-3-1.jpeg).
+![Local Image](./images/image-3-1.png).
 
 
 # Adjacency List of graph
@@ -25,6 +25,6 @@
 
 - Directed
 
-![Local Image](./images/image-3-2.jpeg).
+![Local Image](./images/image-3-2.png).
 
 
