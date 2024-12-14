@@ -14,6 +14,10 @@
 
 ![Local Image](./images/image-3-1.png).
 
+- Undirected Weightage 
+
+![Local Image](./images/image-4-2.png).
+
 
 # Adjacency List of graph
 
@@ -27,4 +31,6 @@
 
 ![Local Image](./images/image-3-2.png).
 
+- Undirected
 
+![Local Image](./images/image-4-1.png).
