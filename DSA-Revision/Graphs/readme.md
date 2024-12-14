@@ -59,7 +59,7 @@
 
 ![Local Image](./images/image-6-1.jpg).
 
-![Local Image](./images/image-6-2.jpg).
+![Local Image](./images/image-6-2.png).
 
 
 
