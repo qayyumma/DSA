@@ -18,6 +18,8 @@
 
 ![Local Image](./images/image-4-2.png).
 
+- same for directed graph but just need to store form a--> b not b--> a
+
 
 # Adjacency List of graph
 
@@ -31,6 +33,8 @@
 
 ![Local Image](./images/image-3-2.png).
 
-- Undirected
+- Undirected Weigtage
 
 ![Local Image](./images/image-4-1.png).
+
+- same for directed graph but just need to store form a--> b not b--> a
