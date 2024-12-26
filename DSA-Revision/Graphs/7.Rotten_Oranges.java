@@ -60,7 +60,9 @@ public class Solution {
             }
 
             // Increment time after each level (one minute)
-            time++;
+            if(!queue.isempty()){
+                time++;
+            }
         }
 
         // Return time if all oranges are rotten; otherwise, return -1
