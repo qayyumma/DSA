@@ -60,7 +60,7 @@ public class Solution {
             }
 
             // Increment time after each level (one minute)
-            if(!queue.isempty()){
+            if(!queue.isEmpty()){
                 time++;
             }
         }
