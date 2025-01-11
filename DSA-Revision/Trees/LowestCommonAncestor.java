@@ -1,60 +1,114 @@
-class TreeNode {
-    int val;
-    TreeNode left, right;
+Problem Description
 
-    TreeNode(int val) {
-        this.val = val;
-        this.left = null;
-        this.right = null;
-    }
-}
+Find the lowest common ancestor in an unordered binary tree A, given two values, B and C, in the tree.
 
-public class LowestCommonAncestor {
-    public TreeNode findLCA(TreeNode root, TreeNode node1, TreeNode node2) {
-        // Base case: if root is null or matches either of the nodes, return root
-        if (root == null || root == node1 || root == node2) {
-            return root;
+Lowest common ancestor: the lowest common ancestor (LCA) of two nodes and w in a tree or directed acyclic graph (DAG) is the lowest (i.e., deepest) node that has both v and w as descendants.
+
+
+Problem Constraints
+
+1 <= size of tree <= 100000
+
+1 <= B, C <= 109
+
+
+Input Format
+
+First argument is head of tree A.
+
+Second argument is integer B.
+
+Third argument is integer C.
+
+
+Output Format
+
+Return the LCA.
+
+
+/**
+ * Definition for binary tree
+ * class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) {
+ *      val = x;
+ *      left=null;
+ *      right=null;
+ *     }
+ * }
+ */
+public class Solution {
+
+    int ans = 0;
+
+    public int lca(TreeNode A, int B, int C) {
+
+
+        if( search(A, B)  == false || search(A, C) == false){
+            return -1;
         }
 
-        // Recursively search for the target nodes in the left and right subtrees
-        TreeNode leftLCA = findLCA(root.left, node1, node2);
-        TreeNode rightLCA = findLCA(root.right, node1, node2);
 
-        // Determine the LCA based on the search results
-        if (leftLCA != null && rightLCA != null) {
-            return root; // Current root is the LCA
+        if(C==B){
+            return B;
         }
 
-        // If one subtree contains both nodes, return that subtree's result
-        return (leftLCA != null) ? leftLCA : rightLCA;
+        code(A, B, C);
+
+        return ans;
+
     }
 
-    public static void main(String[] args) {
-        // Example Binary Tree:
-        //        3
-        //       / \
-        //      5   1
-        //     / \ / \
-        //    6  2 0  8
-        //      / \
-        //     7   4
+    public boolean code( TreeNode A, int B, int C ){
 
-        TreeNode root = new TreeNode(3);
-        root.left = new TreeNode(5);
-        root.right = new TreeNode(1);
-        root.left.left = new TreeNode(6);
-        root.left.right = new TreeNode(2);
-        root.right.left = new TreeNode(0);
-        root.right.right = new TreeNode(8);
-        root.left.right.left = new TreeNode(7);
-        root.left.right.right = new TreeNode(4);
 
-        LowestCommonAncestor lcaFinder = new LowestCommonAncestor();
+        if(A==null){
+            return false;
+        }
 
-        TreeNode node1 = root.left; // Node 5
-        TreeNode node2 = root.left.right.right; // Node 4
+        if(A.val == B || A.val == C){
 
-        TreeNode lca = lcaFinder.findLCA(root, node1, node2);
-        System.out.println("Lowest Common Ancestor of " + node1.val + " and " + node2.val + " is: " + lca.val);
+            ans = A.val;
+
+            return true;
+
+        }
+
+        boolean left = code(A.left, B, C);
+
+        boolean right = code(A.right, B, C);
+
+        if(left == true && right ==true){
+
+            ans = A.val;
+
+        }
+
+        return left || right;
+
     }
+
+    public boolean search(TreeNode A, int V){
+
+        if(A==null){
+            return false;
+        }
+
+        if(A.val == V){
+            return true;
+        }
+
+        boolean left = search(A.left, V);
+
+        boolean right = search(A.right, V);
+
+        return right || left;
+
+
+    }
+
+
 }
+
