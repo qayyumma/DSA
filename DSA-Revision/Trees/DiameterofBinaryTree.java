@@ -1,3 +1,22 @@
+Problem Description
+
+Given a Binary Tree A consisting of N integer nodes, you need to find the diameter of the tree.
+
+The diameter of a tree is the number of edges on the longest path between two nodes in the tree.
+
+Problem Constraints
+
+0 <= N <= 105
+
+Input Format
+
+First and only Argument represents the root of binary tree A.
+
+Output Format
+
+Return an single integer denoting the diameter of the tree.
+
+
 class TreeNode {
     int val;
     TreeNode left, right;
