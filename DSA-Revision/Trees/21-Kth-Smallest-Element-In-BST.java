@@ -2,22 +2,20 @@ Problem Description
 
 Given a binary search tree represented by root A, write a function to find the Bth smallest element in the tree.
 
-
 Problem Constraints
 
 1 <= Number of nodes in binary tree <= 100000
 
 0 <= node values <= 10^9
 
-
 Input Format
 
 First and only argument is head of the binary tree A.
 
-
 Output Format
 
 Return an integer, representing the Bth element.
+
 
 /**
  * Definition for binary tree
