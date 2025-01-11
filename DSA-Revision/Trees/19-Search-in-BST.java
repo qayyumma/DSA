@@ -50,11 +50,11 @@ public class Solution {
             return 0;
         }
 
-        if(A.val==B){
+        else if(A.val==B){
             return 1;
         }
 
-        if(A.val < B ){
+        else if(A.val < B ){
 
             return code(A.right, B);
 
