@@ -112,3 +112,101 @@ public class Solution {
 
 }
 
+==================================================================================================================
+
+Problem Description
+
+Given a Binary Search Tree A. Also given are two nodes B and C. Find the lowest common ancestor of the two nodes.
+
+
+Note 1 :- It is guaranteed that the nodes B and C exist.
+
+Note 2 :- The LCA of B and C in A is the shared ancestor of B and C that is located farthest from the root.
+
+
+
+Problem Constraints
+
+1 <= Number of nodes in binary tree <= 105
+
+1 <= B , C <= 105
+
+
+
+Input Format
+
+First argument is a root node of the binary tree, A.
+
+Second argument is an integer B.
+
+Third argument is an integer C.
+
+
+Output Format
+
+Return the LCA of the two nodes
+
+
+/**
+ * Definition for binary tree
+ * class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) {
+ *      val = x;
+ *      left=null;
+ *      right=null;
+ *     }
+ * }
+ */
+public class Solution {
+    public int solve(TreeNode A, int B, int C) {
+
+        if( check(A, B)== false || check(A, C)== false){
+            return -1;
+        }
+
+        return code(A, B, C);
+
+    }
+
+    public int code(TreeNode A, int B, int C){
+
+        if(A.val== C || A.val == B){
+            return A.val;
+        }
+
+        else if(A.val < B && A.val < C){
+            return code(A.right, B, C);
+        }
+
+        else if(A.val > B && A.val > C){
+            return code(A.left, B, C);
+        }
+
+        return A.val;
+
+    }
+
+
+    public boolean check(TreeNode A, int v){
+
+        if(A == null){
+            return false;
+        }
+
+        if(A.val == v){
+            return true;
+        }
+
+        boolean left = check(A.left, v );
+
+        boolean right = check(A.right, v);
+
+        return left || right;
+
+
+    }
+}
+
