@@ -1,53 +1,80 @@
-import java.util.*;
+/**
+ * Definition for binary tree
+ * class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) {
+ *      val = x;
+ *      left=null;
+ *      right=null;
+ *     }
+ * }
+ */
+public class Solution {
 
-class VerticalTraversal {
-    static class TreeNode {
-        int val;
-        TreeNode left, right;
 
-        TreeNode(int val) {
-            this.val = val;
-        }
-    }
-
-    public List<List<Integer>> verticalTraversal(TreeNode root) {
-        TreeMap<Integer, List<Integer>> map = new TreeMap<>();
-        Queue<Pair> queue = new LinkedList<>();
-        queue.offer(new Pair(root, 0));
-
-        while (!queue.isEmpty()) {
-            Pair current = queue.poll();
-            TreeNode node = current.node;
-            int col = current.col;
-
-            map.putIfAbsent(col, new ArrayList<>());
-            map.get(col).add(node.val);
-
-            if (node.left != null) queue.offer(new Pair(node.left, col - 1));
-            if (node.right != null) queue.offer(new Pair(node.right, col + 1));
-        }
-
-        return new ArrayList<>(map.values());
-    }
-
-    static class Pair {
+    static class pair {
+        Integer level;
         TreeNode node;
-        int col;
 
-        Pair(TreeNode node, int col) {
+        public pair(Integer level, TreeNode node) {
+            this.level = level;
             this.node = node;
-            this.col = col;
         }
     }
 
-    public static void main(String[] args) {
-        TreeNode root = new TreeNode(3);
-        root.left = new TreeNode(9);
-        root.right = new TreeNode(20);
-        root.right.left = new TreeNode(15);
-        root.right.right = new TreeNode(7);
 
-        VerticalTraversal vt = new VerticalTraversal();
-        System.out.println(vt.verticalTraversal(root)); // Output: [[9], [3, 15], [20], [7]]
+
+    public int[][] verticalOrderTraversal(TreeNode A) {
+
+        Queue<pair> queue = new LinkedList<>();
+        HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
+
+        int max = 0;
+        int min = 0;
+
+        pair curr = new pair(0, A);
+        queue.offer(curr);
+
+        // BFS traversal to populate the map
+        while (!queue.isEmpty()) {
+            curr = queue.poll();
+
+            if (curr.node.left != null) {
+                pair temp = new pair(curr.level - 1, curr.node.left);
+                queue.offer(temp);
+            }
+
+            if (curr.node.right != null) {
+                pair temp = new pair(curr.level + 1, curr.node.right);
+                queue.offer(temp);
+            }
+
+            // Add node value to the list corresponding to the current level
+            if (!map.containsKey(curr.level)) {
+                map.put(curr.level, new ArrayList<Integer>());
+            }
+            map.get(curr.level).add(curr.node.val);
+
+            min = Math.min(min, curr.level);
+            max = Math.max(max, curr.level);
+        }
+
+        int len = max - min + 1; // Total number of levels from min to max
+        int[][] ans = new int[len][];
+
+        // Populate the result 2D array
+        for (int i = 0; i < len; i++) {
+                int level = min + i;
+                ArrayList<Integer> nodesAtLevel = map.get(level);
+                ans[i] = new int[nodesAtLevel.size()];
+                for (int j = 0; j < nodesAtLevel.size(); j++) {
+                    ans[i][j] = nodesAtLevel.get(j);
+                }
+        }
+
+        return ans;
     }
+
 }
