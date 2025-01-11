@@ -196,17 +196,18 @@ public class Solution {
             return false;
         }
 
-        if(A.val == v){
+        else if(A.val == v){
             return true;
         }
 
-        boolean left = check(A.left, v );
+        else if(v > A.val){
 
-        boolean right = check(A.right, v);
+            return check(A.right, v );
+        }
+        
 
-        return left || right;
+        return check(A.left, v);
 
 
     }
 }
-
