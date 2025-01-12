@@ -1,3 +1,42 @@
+Problem Description
+
+Given an directed graph having A nodes. A matrix B of size M x 2 is given which represents the M edges such that there is a edge directed from node B[i][0] to node B[i][1].
+
+Find whether the graph contains a cycle or not, return 1 if cycle is present else return 0.
+
+NOTE:
+
+The cycle must contain atleast two nodes.
+There are no self-loops in the graph.
+There are no multiple edges between two nodes.
+The graph may or may not be connected.
+Nodes are numbered from 1 to A.
+Your solution will run on multiple test cases. If you are using global variables make sure to clear them.
+
+
+Problem Constraints
+
+2 <= A <= 105
+
+1 <= M <= min(200000,A*(A-1))
+
+1 <= B[i][0], B[i][1] <= A
+
+
+
+Input Format
+
+The first argument given is an integer A representing the number of nodes in the graph.
+
+The second argument given a matrix B of size M x 2 which represents the M edges such that there is a edge directed from node B[i][0] to node B[i][1].
+
+
+Output Format
+
+Return 1 if cycle is present else return 0.
+
+
+
 import java.util.ArrayList;
 
 public class Graph {
@@ -60,4 +99,84 @@ public class Graph {
         Graph g = new Graph();
         System.out.println("Does the graph contain a cycle? " + g.isCyclic(V, adj));
     }
+}
+
+====================================================================================================================
+
+
+public class Solution {
+
+    private boolean[] visited;
+
+    private boolean[] pathVisited; 
+
+    private List<Integer>[] graph;
+
+
+    public int solve(int A, int[][] B) {
+
+        visited = new  boolean[A+1];
+
+        pathVisited = new boolean[A+1];
+
+        graph = new LinkedList[A+1];
+
+        for(int i = 0; i <= A; i++) graph[i] = new LinkedList<>();
+
+        for(int i = 0; i < B.length; i++){
+
+            int u = B[i][0];
+
+            int v = B[i][1];
+
+            graph[u].add(v);
+
+        }
+
+        for(int i = 1; i <= A; i++){
+
+            if(!visited[i]){
+
+                if(dfs(i)){
+                    return 1;
+                }
+            }
+
+
+        }
+
+        return 0;
+
+    }
+
+
+    private boolean dfs( int i ){
+            
+            visited[i] = true;
+
+            pathVisited[i] = true;
+
+            for(int ele: graph[i]){
+
+                if(!visited[ele]){
+
+                    if(dfs(ele)){
+                        return true;
+                    }
+
+                }
+
+                else if(pathVisited[ele]){
+                    return true;
+                }
+
+            }
+
+        pathVisited[i] = false;
+
+        return false;
+
+    }
+
+
 }
