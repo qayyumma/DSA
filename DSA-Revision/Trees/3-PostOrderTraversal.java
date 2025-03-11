@@ -26,3 +26,16 @@ public void postorderTraversalIterative(TreeNode root) {
         System.out.print(stack2.pop().val + " ");
     }
 }
+
+
+=========================================================
+
+
+# Example Tree:
+#       1
+#      / \
+#     2   3
+#    / \
+#   4   5
+
+Postorder Traversal: 4 5 2 3 1
