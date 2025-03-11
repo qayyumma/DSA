@@ -19,3 +19,16 @@ public void preorderTraversalIterative(TreeNode root) {
         if (node.left != null) stack.push(node.left);
     }
 }
+
+================================================================
+
+
+
+# Example Tree:
+#       1
+#      / \
+#     2   3
+#    / \
+#   4   5
+
+Preorder Traversal: 1 2 4 5 3
