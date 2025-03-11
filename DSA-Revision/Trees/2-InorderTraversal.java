@@ -21,3 +21,14 @@ public void inorderTraversalIterative(TreeNode root) {
         current = current.right;
     }
 }
+
+================================================
+
+# Example Tree:
+#       1
+#      / \
+#     2   3
+#    / \
+#   4   5
+
+Inorder Traversal: 4 2 5 1 3
