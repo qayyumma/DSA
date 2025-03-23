@@ -30,87 +30,80 @@ Output Format
 
 Return an integer representing the minimal cost required.
 
-
 public class Solution {
 
-    int[] r;
+    class Pair{
 
-    List<Integer>[] graph; 
+        int d;
+        int w;
+
+        public Pair(int d, int w){
+            this.d = d;
+            this.w = w;
+        }
+
+    }
 
     public int solve(int A, int[][] B) {
 
-        r = new int[A];
+        ArrayList<Pair>[] graph = new ArrayList[A+1];
 
-        graph = new LinkedList[A];
+        for(int i = 1; i <= A; i++){
 
-        for(int i = 0; i < A; i++){
-
-            graph[i] = new LinkedList<>();
-
+            graph[i] = new ArrayList<>();
         }
 
         for(int i = 0; i < B.length; i++){
 
             int u = B[i][0];
+
             int v = B[i][1];
 
-            graph[v].add(u);
-            graph[u].add(v);
+            int w = B[i][2];
+
+            graph[u].add(new Pair(v, w));
+
+            graph[v].add(new Pair(u, w));
 
         }
 
-        for(int i = 0; i < A; i++){
-
-            for(int ele: graph[i]){
-
-                if(r[ele]==0){
-
-                    if(bfs(ele)){
-                        return 0;
-                    }
-
-                }
+        PriorityQueue<Pair> queue = new PriorityQueue( new Comparator<Pair>(){
+            public int compare(Pair p1, Pair p2){
+                return Integer.compare(p1.w, p2.w);
             }
+        });
 
-        }
+        int ans = 0;
 
+        boolean[] test = new boolean[A+1];
 
-
-        return 1;
-
-    }
-
-
-    private boolean bfs(int i ){
-
-        Queue<Integer> queue = new LinkedList<>();
-
-        queue.add(i);
-
-        r[i] = -1;
+        queue.add(new Pair(1, 0));
 
         while(!queue.isEmpty()){
 
-            int temp = queue.poll();
+            Pair temp = queue.poll();
 
-            for(int ele: graph[temp]){
+            if(test[temp.d]){
 
-                if(r[ele]==0){
-                    r[ele] = -r[temp];
-                    queue.add(ele);
-                }
-                else if(r[ele] == r[temp]){
-                    return true;
+                continue;
+
+            }
+
+            test[temp.d] = true;
+
+            ans += temp.w;
+
+            for( Pair temp2: graph[temp.d]){
+
+                if(!test[temp2.d]){
+                    queue.add(new Pair(temp2.d, temp2.w));
                 }
 
             }
 
         }
 
-        return false;
-
+        return ans;
+        
     }
-
-
-
 }
